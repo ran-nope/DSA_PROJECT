@@ -32,4 +32,4 @@ in your project document and slides.
   fresh copies of every plot before the review.
 - Week 3's cleaning choices (median imputation for Rating/Size, mode
   for Type, 99th-percentile capping for Reviews) should be mentioned
-  explicitly in the "Methodology" slide.
+  explicitly .
