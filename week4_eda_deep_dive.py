@@ -8,7 +8,7 @@ Goals for this week:
     3. Visualize distributions to understand app success patterns
 
 Uses the cleaned dataset produced in Week 3
-(googleplaystore_cleaned.csv). Run week3_cleaning_sprint.py first.
+(googleplaystore_cleaned.csv). Must Run week3_cleaning_sprint.py first.
 ----------------------------------------------------------------
 """
 
@@ -21,10 +21,8 @@ sns.set_style("whitegrid")
 
 df = pd.read_csv("googleplaystore_cleaned.csv")
 print("Loaded cleaned dataset. Shape:", df.shape)
-
-# ==================================================================
+ 
 # PART A : UNIVARIATE ANALYSIS
-# ==================================================================
 
 # A1. Distribution of Rating
 plt.figure(figsize=(8, 5))
@@ -74,9 +72,19 @@ plt.show()
 plt.close()
 print("Saved: week4_univariate_installs.png")
 
-# ==================================================================
+# A5. Univariate Boxplot - Rating ( Box Plot = univariate,
+#     used for outlier detection, distinct from the bivariate boxplot
+#     in Part B below
+plt.figure(figsize=(4, 5))
+sns.boxplot(y=df["Rating"], color="lightcoral")
+plt.title("Univariate Boxplot: Rating")
+plt.tight_layout()
+plt.savefig("week4_univariate_rating_boxplot.png", dpi=150)
+plt.show()
+plt.close()
+print("Saved: week4_univariate_rating_boxplot.png")
+
 # PART B : BIVARIATE ANALYSIS
-# ==================================================================
 
 # B1. Rating vs Category (Boxplot)
 plt.figure(figsize=(12, 6))
@@ -127,10 +135,9 @@ plt.savefig("week4_correlation_heatmap.png", dpi=150)
 plt.show()
 plt.close()
 print("Saved: week4_correlation_heatmap.png")
-
-# ==================================================================
-# PART C : KEY INSIGHTS SUMMARY (for the report)
-# ==================================================================
+ 
+# PART C : KEY INSIGHTS SUMMARY
+ 
 insights = f"""
 WEEK 4 - KEY EDA INSIGHTS
 --------------------------------------------------
